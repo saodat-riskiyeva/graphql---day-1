@@ -13,4 +13,17 @@ const typeDefs = `#graphql
     type UserResponse {
         user: User
         address: Address
-    }`;
+    }
+`;
+
+const resolvers = {
+  Query: {},
+  Mutation: {},
+  Subscriptions: {},
+  Address: {
+    houseNumber: (address) => parseInt(address.houseNumber),
+  },
+  User: {
+    lastName: (user) => console.log(user.lastName),
+  },
+};
